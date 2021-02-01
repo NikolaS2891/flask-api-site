@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<table style="width: 100%;">
+  <thead>
+    <tr>
+        <th>ID</th>
+        <th>cell_id</th>
+        <th>azimuth</th>
+        <th>band</th>
+    </tr>
+    </thead>    
+    <tbody>
+     {% for post in posts %}    
+            <tr>
+                <td>{{post.id}}</td>
+                <td>{{post.cell_id}}</td>
+                <td>{{post.azimuth}}</td>
+                <td>{{post.band}}</td>
+                {% if post.username == current_user.username %}
+                <td><a class="article-title" href="{{ url_for('site_edit', site_id=post.id) }}">Edit</a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

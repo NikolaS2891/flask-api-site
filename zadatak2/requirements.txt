@@ -1,0 +1,7 @@
+flask-sqlalchemy
+sqlalchemy
+flask-security
+flask-wtf
+gunicorn
+flask_migrate
+flask_script
